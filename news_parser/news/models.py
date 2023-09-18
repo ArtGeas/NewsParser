@@ -10,5 +10,5 @@ class News(models.Model):
     post_title =  models.CharField(max_length=255, verbose_name='Заголовок новости')
     date_create  =  UnixTimeStampField(verbose_name='Дата публикации')  # Дата публикации новости в формате unix timestamp
     post_text = models.TextField(max_length=255, verbose_name='Текст новости')  # включая разметку и изображения
-    post_image = models.ImageField(upload_to='images', verbose_name='Изображение к новости')
-    post_id = models.PositiveSmallIntegerField(verbose_name='uid новости') # md5 hash от прямого ссылки на новость
+    post_image = models.ImageField(upload_to='images', verbose_name='Изображение к новости', blank=True, null=True)
+    post_id = models.CharField(max_length=255, verbose_name='uid новости') # md5 hash от прямого ссылки на новость
