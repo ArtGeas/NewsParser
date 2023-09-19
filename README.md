@@ -13,7 +13,7 @@
 
 1. Устанавливаем зависимости 
 ```bash
-pip install -r requirments.txt
+pip install -r requirements.txt
 ```
 
 2. Запускаем Redis
