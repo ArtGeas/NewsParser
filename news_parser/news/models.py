@@ -19,3 +19,4 @@ class News(models.Model):
     def save(self, *args, **kwargs):
         date_time_obj = datetime.datetime.strptime(self.date_create, '%Y-%m-%d %H:%M:%S.%f') + timedelta(hours=3)  # переводим с utc на мск 
         self.date_create = date_time_obj.timestamp()
+        super().save(*args, **kwargs)
