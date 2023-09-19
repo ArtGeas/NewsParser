@@ -2,7 +2,7 @@
 
 Приложение парсит новостной сайт в БД каждые 15 мин.
 
-Все настройки бот берет из переменных окружения. В корне проекта рядом с файлом settings.py есть файл .env.template, туда же закинуть приложенный файл .env
+Все настройки бот берет из переменных окружения. В корне проекта(NewsParser/news_parser/news_parser) рядом с файлом settings.py есть файл .env.template, туда же закинуть приложенный файл .env
 
 После запуска проекта, чтобы получить доступ в админку переходим по http://127.0.0.1:8000/admin/
 
@@ -21,7 +21,7 @@ pip install -r requirements.txt
 docker run -d -p 6379:6379 redis 
 ```
 
-3. Переходим в корень django-проекта(news_parser). Применяем миграции и заводим суперюзера (для доступа в админку django)
+3. Переходим в корень django-проекта(cd news_parser). Применяем миграции и заводим суперюзера (для доступа в админку django)
 ```bash
 python manage.py makemigrations && python manage.py migrate && python manage.py createsuperuser 
 ```
