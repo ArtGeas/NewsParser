@@ -2,7 +2,7 @@ import datetime
 from datetime import timedelta
 
 from django.db import models
-from unixtimestampfield.fields import UnixTimeStampField
+
 
 class News(models.Model):
     class Meta:
