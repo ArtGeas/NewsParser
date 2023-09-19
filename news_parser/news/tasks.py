@@ -62,5 +62,3 @@ def repeat_order_make():
                                      post_text=news_data.get('text'),
                                      post_image=news_data.get('image')
                                      )     
-
-    return "необязательная заглушка"
