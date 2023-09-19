@@ -23,7 +23,7 @@ docker run -d -p 6379:6379 redis
 
 3. Переходим в корень django-проекта(cd news_parser). Применяем миграции и заводим суперюзера (для доступа в админку django)
 ```bash
-python manage.py makemigrations && python manage.py migrate && python manage.py createsuperuser 
+python manage.py makemigrations && python manage.py migrate --run-syncdb && python manage.py createsuperuser 
 ```
 
 4. Запускаем Django-сервер
