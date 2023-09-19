@@ -16,7 +16,7 @@ app.autodiscover_tasks()
 app.conf.beat_schedule = {
     'every': { 
         'task': 'news.tasks.repeat_order_make',
-        'schedule': 30.0,# по умолчанию выполняет каждую минуту, очень гибко 
-    },                                                              # настраивается
+        'schedule': 900.0,# 15 мин 
+    },                                                              
 
 }
