@@ -2,13 +2,14 @@ from bs4 import BeautifulSoup
 import requests
 import json
 from datetime import datetime
+from django.conf import settings
 
 
 from news_parser.celery import app
 from .models import News 
 
 
-url = 'https://78.ru/news'
+url = settings.URL
 
 
 @app.task #регистриуем таску
@@ -55,7 +56,10 @@ def repeat_order_make():
         
 
     for news_data in parsed_needed_news:
-          News.objects.get_or_create(post_id=news_data.get('news_id'),
+        if News.objects.filter(post_id=news_data.get('news_id')).exists():
+            pass
+        else:
+            News.objects.get_or_create(post_id=news_data.get('news_id'),
                                      post_title=news_data.get('title'),
                                      date_create=news_data.get('created'), # время в UTC
                                      post_url =news_data.get('url'),

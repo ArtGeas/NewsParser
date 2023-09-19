@@ -4,6 +4,7 @@ from .models import News
 
 class NewsAdmin(admin.ModelAdmin):
     list_display = ['post_id', 'post_url', 'post_title', 'date_create', 'post_text', 'post_image']
+    ordering = ['-date_create']
     actions = ['convert_to_JSON']
 
     @admin.action(description='Выгрузить в JSON')
