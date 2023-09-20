@@ -8,3 +8,7 @@ Dockerfile
 .git
 .gitattributes
 .gitignore
+
+*.sqlite3
+*.sqlite3-journal
+__pycache__/
